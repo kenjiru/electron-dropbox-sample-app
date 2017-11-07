@@ -8,6 +8,8 @@ const ipc = electron.ipcMain;
 const CLIENT_ID = 'v9wt185d6c3xbza';
 const app = electron.app;
 
+const preload = path.join(__dirname, 'preload.js');
+
 // adds debug features like hotkeys for triggering dev tools and reload
 require('electron-debug')();
 
@@ -36,7 +38,8 @@ function createMainWindow() {
 		width: 1080,
 		webPreferences: {
 			nodeIntegration: false,
-			webSecurity: false
+			webSecurity: false,
+			preload,
 		}
 	});
 
@@ -75,7 +78,11 @@ function openAuthWindow(event, link) {
 		height: 480,
 		width: 720,
 		frame: false,
-		show: false
+		show: false,
+		webPreferences: {
+			nodeIntegration: false,
+			preload
+		}
 	});
 
 	authWindow.loadURL(link);

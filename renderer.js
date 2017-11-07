@@ -1,5 +1,4 @@
-const ipc = require('electron').ipcRenderer;
-const {shell} = require('electron');
+const ipc = window.ipc;
 
 const titleEl = document.getElementById('welcome');
 const linkEl = document.getElementById('authAnchor');
