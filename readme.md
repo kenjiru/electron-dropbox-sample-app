@@ -1,7 +1,6 @@
 # electron-dropbox-sample-app
 
-> My solid app
-
+> Simple app that tests Dropbox Authentication in Electron.
 
 ## Dev
 
@@ -25,5 +24,7 @@ Builds the app for macOS, Linux, and Windows, using [electron-packager](https://
 
 
 ## License
+
+MIT © [kenjiru](http://github.com/kenjiru)
 
 MIT © [Aaron Noel De Leon](http://nelonoel.github.io)
