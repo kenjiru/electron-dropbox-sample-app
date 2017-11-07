@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const ajax = require('superagent');
 const ipc = electron.ipcMain;
-const CLIENT_ID = 'v9wt185d6c3xbza';
+const CLIENT_ID = '17zzlf216nsykj9';
 const app = electron.app;
 
 const preload = path.join(__dirname, 'preload.js');
@@ -58,7 +58,7 @@ function createMainWindow() {
 
 function initDropbox(event) {
 	dbx = new Dropbox({ clientId: CLIENT_ID });
-	const authUrl = dbx.getAuthenticationUrl('http://localhost:3333/auth');
+	const authUrl = dbx.getAuthenticationUrl('http://localhost:8080/dropbox-auth.html');
 	event.sender.send('AUTH_URL_FETCHED', authUrl);
 }
 
